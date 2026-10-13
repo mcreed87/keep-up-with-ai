@@ -45,6 +45,7 @@
   .kicker { font: 0.98rem/1.3 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.45rem; }
   h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.12; margin: 0; }
   h1 { font-size: var(--text-h1); }
+  h1, h2, h3, .lead { text-wrap: balance; }
   h2 { font-size: var(--text-h2); }
   h3 { font-size: 1.25rem; margin-bottom: 0.35rem; }
   p { margin: 0 0 1rem; }
@@ -70,23 +71,22 @@
   /* collapsible sections */
   main { padding-bottom: 1rem; }
   details.sec { margin: 0.9rem 0 0; border: 1px solid var(--edge); border-radius: var(--radius); background: #202C3C; overflow: hidden; scroll-margin-top: 0.75rem; }
-  details.sec > summary { list-style: none; cursor: pointer; padding: 1.15rem 3.4rem 1.15rem 1.2rem; position: relative; }
+  details.sec > summary { list-style: none; cursor: pointer; padding: 1rem 3rem 1rem 1.1rem; position: relative; }
   details.sec > summary::-webkit-details-marker { display: none; }
   details.sec > summary::after { content: "+"; position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%); font: 700 1.6rem var(--mono); color: var(--accent); transition: transform var(--duration-fast) ease; }
   details.sec[open] > summary::after { transform: translateY(-50%) rotate(45deg); }
-  details.sec > summary .num { position: absolute; right: 3rem; top: 50%; transform: translateY(-50%); font: 700 3.2rem/1 var(--serif); color: var(--numeral); pointer-events: none; }
-  details.sec > summary .kicker { padding-right: 2.2rem; }
-  details.sec > summary h2 { padding-right: 2.2rem; }
-  .sec-body { padding: 0 1.2rem 1.3rem; }
+    details.sec > summary .kicker { margin-bottom: 0.25rem; }
+  .sec-body { padding: 0 1.1rem 1.15rem; }
+  .lead { font: 700 1.15rem/1.3 var(--serif); color: var(--text); margin-bottom: 0.7rem; }
   .sec-body > :first-child { margin-top: 0.2rem; }
   .top { display: inline-block; margin-top: 0.4rem; font: 0.9rem var(--mono); }
 
   /* game plan steps */
   ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
-  ol.steps li { counter-increment: s; position: relative; padding: 0.85rem 0 0.85rem 2.6rem; border-top: 1px solid var(--rule); }
+  ol.steps li { counter-increment: s; position: relative; padding: 0.7rem 0 0.7rem 2.2rem; border-top: 1px solid var(--rule); line-height: 1.4; }
   ol.steps li:first-child { border-top: 0; }
-  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0.7rem; font: 700 1.6rem var(--serif); color: var(--accent); }
-  ol.steps strong { font-family: var(--serif); font-size: 1.18rem; display: block; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0.6rem; font: 700 1.45rem var(--serif); color: var(--accent); }
+  ol.steps strong { font-family: var(--serif); font-size: 1.12rem; display: block; margin-bottom: 0.15rem; }
   ol.steps span { color: var(--muted); }
 
   /* ten-second test */
@@ -142,6 +142,12 @@
   footer .wrap { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
   footer .big { font-family: var(--serif); color: var(--text); font-size: 1.15rem; }
 
+  @media (max-width: 480px) {
+    .kicker { font-size: 0.88rem; letter-spacing: 0.05em; }
+    h2 { font-size: 1.45rem; }
+    details.sec { margin-top: 0.7rem; }
+    nav.toc li a { padding: 0.6rem 0; }
+  }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   @media print {
     body { background: #fff; color: #111; }
@@ -177,7 +183,7 @@
 <main class="wrap">
 
   <details class="sec" id="plan" open>
-    <summary><p class="kicker">Your game plan · Monday morning</p><h2>Five things. Then close the tab.</h2></summary>
+    <summary><p class="kicker">Your game plan</p><h2>Five things. Then close the tab.</h2></summary>
     <div class="sec-body">
       <ol class="steps">
         <li><strong>Pick two or three companies to follow.</strong><span>The ones you actually build on. Anthropic, OpenAI, whatever it is.</span></li>
@@ -190,9 +196,10 @@
   </details>
 
   <details class="sec" id="test">
-    <summary><span class="num" aria-hidden="true">2</span><p class="kicker">The ten-second test · ask three questions</p><h2>Does this actually matter to you?</h2></summary>
+    <summary><p class="kicker">Ask three questions</p><h2>The ten-second test</h2></summary>
     <div class="sec-body">
-      <p>Before you spend time on any piece of AI news:</p>
+      <p class="lead">Does this actually matter to you?</p>
+      <p>Before you spend time on any piece of AI news, ask:</p>
       <div class="q">
         <b>Ship</b><span>Could I build something new or better because of this?</span>
         <b class="w">Work</b><span>Does this change how I do my job day to day?</span>
@@ -205,7 +212,7 @@
   </details>
 
   <details class="sec" id="follow">
-    <summary><span class="num" aria-hidden="true">3</span><p class="kicker">The fast lane · the few things you own</p><h2>Accounts to follow</h2></summary>
+    <summary><p class="kicker">The fast lane</p><h2>Accounts to follow</h2></summary>
     <div class="sec-body">
       <p>Pick two or three. Turn on their official notifications. Try it the day it ships.</p>
       <div class="grid">
@@ -233,7 +240,7 @@
   </details>
 
   <details class="sec" id="notify">
-    <summary><p class="kicker">Step by step · iPhone and Android</p><h2>Turn on notifications</h2></summary>
+    <summary><p class="kicker">iPhone and Android</p><h2>Turn on notifications</h2></summary>
     <div class="sec-body">
       <p>You don't need to post anything, and your account can stay private. Do this for your two or three only.</p>
       <details class="sub">
@@ -282,7 +289,7 @@
   </details>
 
   <details class="sec" id="weekly">
-    <summary><span class="num" aria-hidden="true">3</span><p class="kicker">The slow lane · everything else</p><h2>Your weekly hour</h2></summary>
+    <summary><p class="kicker">The slow lane</p><h2>Your weekly hour</h2></summary>
     <div class="sec-body">
       <p>Everything else gets one hour, once a week. Same day, same time, on the calendar. Feeds stay closed in between. Wait for two sources: if a story only shows up in one place, let it wait.</p>
       <div class="grid">
@@ -338,8 +345,9 @@
   </details>
 
   <details class="sec" id="decisions">
-    <summary><span class="num" aria-hidden="true">4</span><p class="kicker">Decisions with a date</p><h2>Stop making permanent decisions about tools that aren't permanent.</h2></summary>
+    <summary><p class="kicker">Tools change</p><h2>Decisions with a date</h2></summary>
     <div class="sec-body">
+      <p class="lead">Stop making permanent decisions about tools that aren't permanent.</p>
       <p>Every time you adopt something, write down why, write down your fallback, and put a date on it.</p>
       <div class="card decision">
         <div class="field"><b>Decision</b><span>One sentence. "Switch my coding assistant to X."</span></div>
@@ -360,8 +368,9 @@
   </details>
 
   <details class="sec" id="tips">
-    <summary><p class="kicker">Tips from my desk · checked October 2026</p><h2>Things I've learned the hard way</h2></summary>
+    <summary><p class="kicker">Checked October 2026</p><h2>Tips from my desk</h2></summary>
     <div class="sec-body">
+      <p class="lead">Things I've learned the hard way.</p>
       <p class="muted">Every tip has a date on it, because they go stale. That's the whole point of the talk.</p>
 
       <details class="sub">
