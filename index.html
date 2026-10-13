@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep Up With AI · Matt Reed</title>
+<meta name="description" content="The accounts, channels and habits from Matt Reed's Momentum 2026 talk, How to Keep Up With AI Without Losing Your Mind.">
+<meta name="theme-color" content="#1C2634">
+<meta property="og:title" content="How to keep up with AI without losing your mind">
+<meta property="og:description" content="Who to follow, how to turn on notifications, and tips from Matt Reed's Momentum 2026 talk.">
+<meta property="og:image" content="https://mcreed87.github.io/keep-up-with-ai/social.png">
+<meta property="og:url" content="https://mcreed87.github.io/keep-up-with-ai/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #1C2634;
+    --card: #243142;
+    --edge: #33445A;
+    --text: #E4EAF1;
+    --muted: #9AAABB;
+    --accent: #8FC1F5;
+    --coral: #F28B82;
+    --serif: Cambria, "Iowan Old Style", Georgia, serif;
+    --sans: Calibri, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: Consolas, "SF Mono", Menlo, monospace;
+    --gutter: clamp(1rem, 4vw, 2.5rem);
+    --radius: 14px;
+    --text-base: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+    --text-h1: clamp(2.2rem, 1.4rem + 4vw, 3.8rem);
+    --text-h2: clamp(1.6rem, 1.2rem + 1.8vw, 2.3rem);
+    --space-section: clamp(3rem, 2rem + 4vw, 5.5rem);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: var(--text-base)/1.55 var(--sans);
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--text); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 var(--gutter); }
+  .kicker {
+    font: 0.95rem/1.3 var(--mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.12; margin: 0; }
+  h1 { font-size: var(--text-h1); letter-spacing: -0.01em; }
+  h2 { font-size: var(--text-h2); margin-bottom: 0.9rem; }
+  h3 { font-size: 1.3rem; margin-bottom: 0.35rem; }
+  p { margin: 0 0 1rem; }
+  .muted { color: var(--muted); }
+
+  header.hero { padding: var(--space-section) 0 2.5rem; position: relative; overflow: hidden; }
+  .hero .byline { margin-top: 1.2rem; color: var(--muted); }
+  .hero .byline strong { color: var(--text); font-weight: 600; }
+  .updated {
+    display: inline-block; margin-top: 1.4rem;
+    font: 0.9rem var(--mono); color: var(--muted);
+    border: 1px solid var(--edge); border-radius: 999px; padding: 0.3rem 0.8rem;
+  }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+  nav.toc a {
+    font: 0.95rem var(--mono); text-decoration: none;
+    background: var(--card); border: 1px solid var(--edge);
+    padding: 0.45rem 0.8rem; border-radius: 999px;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+  nav.toc a:hover { border-color: var(--accent); }
+
+  section { padding: var(--space-section) 0 0; scroll-margin-top: 1rem; }
+  .part-num {
+    font: 700 clamp(4rem, 3rem + 6vw, 7rem)/0.8 var(--serif);
+    color: #2A3A50; float: right; margin: -0.4rem 0 0 1rem; user-select: none;
+  }
+
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  ol.steps li {
+    counter-increment: s; position: relative;
+    padding: 0.9rem 0 0.9rem 3rem; border-top: 1px solid var(--edge);
+  }
+  ol.steps li:last-child { border-bottom: 1px solid var(--edge); }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0.75rem;
+    font: 700 1.6rem var(--serif); color: var(--accent);
+  }
+  ol.steps strong { font-family: var(--serif); font-size: 1.2rem; display: block; }
+
+  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--card); border: 1px solid var(--edge);
+    border-radius: var(--radius); padding: 1.2rem 1.3rem;
+  }
+  .card .label { font: 0.85rem var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+  ul.accounts { list-style: none; padding: 0; margin: 0; }
+  ul.accounts li { padding: 0.65rem 0; border-top: 1px solid var(--edge); }
+  ul.accounts li:first-child { border-top: 0; padding-top: 0.2rem; }
+  ul.accounts a { font-weight: 600; font-size: 1.08rem; }
+  ul.accounts .why { display: block; color: var(--muted); font-size: 0.98rem; }
+  .tag {
+    font: 0.75rem var(--mono); color: var(--coral);
+    border: 1px solid var(--coral); border-radius: 999px; padding: 0.05rem 0.45rem; margin-left: 0.35rem;
+    vertical-align: 0.1rem;
+  }
+
+  details.howto {
+    background: var(--card); border: 1px solid var(--edge); border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+  }
+  details.howto summary {
+    cursor: pointer; list-style: none; padding: 1rem 1.3rem;
+    font: 700 1.15rem var(--serif); display: flex; justify-content: space-between; align-items: center;
+  }
+  details.howto summary::-webkit-details-marker { display: none; }
+  details.howto summary::after { content: "+"; font: 1.4rem var(--mono); color: var(--accent); transition: transform 150ms ease; }
+  details.howto[open] summary::after { transform: rotate(45deg); }
+  details.howto .body { padding: 0 1.3rem 1.1rem; }
+  details.howto ol { margin: 0 0 0.6rem; padding-left: 1.2rem; }
+  details.howto li { margin-bottom: 0.35rem; }
+
+  .callout {
+    border-left: 3px solid var(--accent); background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0; padding: 1.2rem 1.4rem; margin: 1.5rem 0;
+  }
+  .callout.warn { border-left-color: var(--coral); }
+  .callout h3 { margin-bottom: 0.5rem; }
+
+  .tip { border-top: 1px solid var(--edge); padding: 1.4rem 0; }
+  .tip:last-of-type { border-bottom: 1px solid var(--edge); }
+  .tip .when { font: 0.85rem var(--mono); color: var(--muted); }
+  .schedule { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1rem; margin: 0.8rem 0 1rem; }
+  .schedule dt { font: 0.95rem var(--mono); color: var(--accent); }
+  .schedule dd { margin: 0; }
+  code { font: 0.95em var(--mono); background: var(--card); border: 1px solid var(--edge); border-radius: 6px; padding: 0.05rem 0.35rem; }
+
+  .decision { display: grid; gap: 0.9rem; }
+  .decision .field { border-bottom: 1px dashed var(--edge); padding-bottom: 0.9rem; }
+  .decision .field b { font-family: var(--serif); font-size: 1.1rem; display: block; }
+  .decision .field span { color: var(--muted); font-size: 0.95rem; }
+
+  footer { padding: var(--space-section) 0 3rem; color: var(--muted); font-size: 0.95rem; }
+  footer .wrap { border-top: 1px solid var(--edge); padding-top: 1.5rem; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media print {
+    body { background: #fff; color: #111; }
+    .card, details.howto, .callout, code { background: #fff; border-color: #bbb; }
+    a { color: #111; }
+    nav.toc, .part-num { display: none; }
+    details.howto .body { display: block; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Momentum Developer Conference · 2026</p>
+    <h1>How to keep up with AI without losing your mind</h1>
+    <p class="byline"><strong>Matt Reed</strong> · Everything from the talk, with links.</p>
+    <span class="updated">Updated October 12, 2026</span>
+    <nav class="toc" aria-label="On this page">
+      <a href="#start">Start here</a>
+      <a href="#bell">Bell on</a>
+      <a href="#howto">Turn on notifications</a>
+      <a href="#weekly">Your weekly hour</a>
+      <a href="#tips">Tips from my desk</a>
+      <a href="#card">Decision card</a>
+      <a href="keep-up-handout.pdf">Handout (PDF)</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="start" aria-labelledby="start-h">
+    <div class="wrap">
+      <p class="kicker">Start here</p>
+      <h2 id="start-h">Five things for Monday morning</h2>
+      <p class="muted">Nobody can keep up with all of it. You only have to keep up with the part that touches your work.</p>
+      <ol class="steps">
+        <li><strong>Pick two or three companies to follow.</strong>The ones you actually build on. Anthropic, OpenAI, whatever it is.</li>
+        <li><strong>Turn on their official notifications.</strong>Only theirs. Everything else off. <a href="#howto">Here's how.</a></li>
+        <li><strong>Block one hour a week.</strong>Same day, same time, on your calendar. That's when you catch up on everything else.</li>
+        <li><strong>Try one new thing.</strong>On real work, this week. Not a tutorial.</li>
+        <li><strong>Write one decision, with a date.</strong>Why you picked it, what you'll do if it goes away, and when you'll look again. <a href="#card">The card is below.</a></li>
+      </ol>
+      <div class="callout">
+        <h3>Before you read any AI news, ask three questions</h3>
+        <p><b>Ship:</b> could I build something new or better because of this? <b>Work:</b> does this change how I do my job day to day? <b>Learn:</b> is this something I need to understand to stay relevant?</p>
+        <p class="muted" style="margin:0">A yes on any one of them means it matters. Three no's means it's entertainment. Enjoy it if you want. It's not mandatory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bell" aria-labelledby="bell-h">
+    <div class="wrap">
+      <span class="part-num" aria-hidden="true">1</span>
+      <p class="kicker">The fast lane · notifications on</p>
+      <h2 id="bell-h">Bell on: the official accounts</h2>
+      <p>Follow the company you build on and turn on notifications for these. Official accounts only. Not fan accounts, not news sites. When a model drops, your phone tells you, and you try it that day on something real.</p>
+      <div class="grid">
+        <article class="card">
+          <p class="label">Anthropic</p>
+          <ul class="accounts">
+            <li><a href="https://x.com/AnthropicAI">@AnthropicAI</a><span class="why">Company news and new models.</span></li>
+            <li><a href="https://x.com/claudeai">@claudeai</a><span class="why">Claude, Claude Code and Cowork releases.</span></li>
+            <li><a href="https://x.com/ClaudeDevs">@ClaudeDevs</a><span class="why">Official updates for developers building with Claude.</span></li>
+            <li><a href="https://discord.com/invite/anthropic">Claude Discord</a><span class="why">The official server. Notifications on for the announcements channel only.</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="label">OpenAI</p>
+          <ul class="accounts">
+            <li><a href="https://x.com/OpenAI">@OpenAI</a><span class="why">Company news and new models.</span></li>
+            <li><a href="https://x.com/OpenAIDevs">@OpenAIDevs</a><span class="why">API and Codex updates.</span></li>
+            <li><a href="https://discord.com/invite/openai">OpenAI Discord</a><span class="why">The official server. Notifications on for the announcements channel only.</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="muted" style="margin-top:1.2rem">Release notes are the most boring and most useful thing you can read. Check them during your weekly hour:
+        <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform release notes</a> ·
+        <a href="https://code.claude.com/docs/en/changelog">Claude Code changelog</a> ·
+        <a href="https://developers.openai.com/api/docs/changelog">OpenAI API changelog</a> ·
+        <a href="https://learn.chatgpt.com/docs/changelog">ChatGPT &amp; Codex changelog</a> ·
+        <a href="https://community.openai.com/">OpenAI Developer Community</a></p>
+    </div>
+  </section>
+
+  <section id="howto" aria-labelledby="howto-h">
+    <div class="wrap">
+      <p class="kicker">Step by step</p>
+      <h2 id="howto-h">How to turn notifications on</h2>
+      <p>You don't need to post anything, and your account can stay private. A read-only account is fine. Do this for your two or three only.</p>
+
+      <details class="howto" open>
+        <summary>On X (iPhone and Android)</summary>
+        <div class="body">
+          <ol>
+            <li>Open the account and tap <b>Follow</b>.</li>
+            <li>A bell icon appears next to the Following button. Tap it.</li>
+            <li>Choose <b>All posts</b>.</li>
+          </ol>
+          <p class="muted" style="margin:0">Still nothing? In X, go to Settings and privacy › Notifications › Preferences › Push notifications and make sure push is on.</p>
+        </div>
+      </details>
+
+      <details class="howto">
+        <summary>iPhone: let X notify you</summary>
+        <div class="body">
+          <ol>
+            <li>Open <b>Settings</b> › <b>Notifications</b> › <b>X</b>.</li>
+            <li>Turn on <b>Allow Notifications</b>.</li>
+            <li>If you use a Focus (Work, Do Not Disturb), open <b>Settings</b> › <b>Focus</b> and add X to the allowed apps, or you won't hear it during work hours.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="howto">
+        <summary>Android: let X notify you</summary>
+        <div class="body">
+          <ol>
+            <li>Open <b>Settings</b> › <b>Apps</b> › <b>X</b> › <b>Notifications</b>.</li>
+            <li>Turn notifications on.</li>
+            <li>If you use Do Not Disturb, add X as an exception. Menu names vary a little by phone maker.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="howto">
+        <summary>Discord announcements</summary>
+        <div class="body">
+          <ol>
+            <li>Join the server and find the announcements channel.</li>
+            <li>Long-press it (right-click on desktop) › <b>Notification Settings</b> › <b>All Messages</b>.</li>
+            <li>Mute the rest of the server so only announcements get through.</li>
+          </ol>
+        </div>
+      </details>
+
+      <p class="muted">Everything else stays off. Reddit, YouTube, newsletters, group chats. You'll still see them in your weekly hour. That's the point.</p>
+    </div>
+  </section>
+
+  <section id="weekly" aria-labelledby="weekly-h">
+    <div class="wrap">
+      <span class="part-num" aria-hidden="true">2</span>
+      <p class="kicker">The slow lane · no notifications</p>
+      <h2 id="weekly-h">Your weekly hour</h2>
+      <p>One hour, once a week, same time. No notifications for any of these. Skim, ask the three questions, and close the tab. If a story only shows up in one place, wait for a second source. If it's real, a second place will have it by then.</p>
+
+      <div class="grid">
+        <article class="card">
+          <p class="label">People on X</p>
+          <ul class="accounts">
+            <li><a href="https://x.com/bcherny">Boris Cherny</a> <span class="muted">@bcherny</span><span class="why">He built Claude Code. Follow him for how he actually uses it, the tricks his teammates share, and straight answers when something isn't working right.</span></li>
+            <li><a href="https://x.com/karpathy">Andrej Karpathy</a> <span class="muted">@karpathy</span><span class="why">Explains new ideas in plain language. When a new term shows up, he's often the clearest place to learn it.</span></li>
+            <li><a href="https://x.com/polynoamial">Noam Brown</a> <span class="muted">@polynoamial</span><span class="why">Reasoning research at OpenAI. The OpenAI side of what's actually changing in the models, and why.</span></li>
+            <li><a href="https://x.com/ClaudeCodeLog">Claude Code Changelog</a> <span class="tag">unofficial bot</span><span class="why">Posts the actual changes in each Claude Code release, including the small ones nobody announces.</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="label">YouTube</p>
+          <ul class="accounts">
+            <li><a href="https://www.youtube.com/@Chase-H-AI">Chase AI</a><span class="why">Practical walkthroughs of what's new and how to use it.</span></li>
+            <li><a href="https://www.youtube.com/@intheworldofai">WorldofAI</a><span class="why">Fast rundowns of new models and tools, with demos.</span></li>
+            <li><a href="https://www.youtube.com/@claude">Claude</a><span class="why">Anthropic's official channel: launches and demos.</span></li>
+            <li><a href="https://www.youtube.com/@OpenAI">OpenAI</a><span class="why">OpenAI's official channel: launches and livestreams.</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="label">Reddit</p>
+          <ul class="accounts">
+            <li><a href="https://www.reddit.com/r/ClaudeAI/">r/ClaudeAI</a><span class="why">What people are running into with Claude, day to day.</span></li>
+            <li><a href="https://www.reddit.com/r/ClaudeCode/">r/ClaudeCode</a><span class="why">Claude Code setups, problems and fixes.</span></li>
+            <li><a href="https://www.reddit.com/r/Anthropic/">r/Anthropic</a><span class="why">Company news and discussion.</span></li>
+            <li><a href="https://www.reddit.com/r/OpenAI/">r/OpenAI</a><span class="why">OpenAI news and discussion.</span></li>
+            <li><a href="https://www.reddit.com/r/ChatGPT/">r/ChatGPT</a><span class="why">How people use ChatGPT, and what breaks.</span></li>
+          </ul>
+          <p class="muted" style="margin:0.8rem 0 0;font-size:0.95rem">Reddit is also where the hype lives. Read it in your hour, not in between.</p>
+        </article>
+      </div>
+
+      <div class="callout">
+        <h3>Why follow people, not just companies</h3>
+        <p>In March and April 2026, a lot of us felt like Claude Code had gotten worse. It wasn't in our heads. On April 23, Anthropic published a postmortem that traced it to three separate changes: the default reasoning effort was lowered from high to medium, a bug made Claude forget its earlier reasoning after a session sat idle, and a system prompt line meant to shorten answers hurt coding quality. All three were fixed, and Anthropic reset everyone's usage limits.</p>
+        <p style="margin:0">The people building the tools are where you hear that story first, and why. <a href="https://www.anthropic.com/engineering/april-23-postmortem">Read the postmortem</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tips" aria-labelledby="tips-h">
+    <div class="wrap">
+      <span class="part-num" aria-hidden="true">3</span>
+      <p class="kicker">Tips from my desk</p>
+      <h2 id="tips-h">Things I've learned the hard way</h2>
+      <p class="muted">Every tip here has a date on it, because they go stale. That's the whole point of the talk. If something changed, it'll change here too.</p>
+
+      <article class="tip">
+        <p class="when">Checked October 2026 · Claude plans</p>
+        <h3>Line your 5-hour windows up with your day</h3>
+        <p>Claude's plan limits reset five hours after your first message. So I don't let my first message happen whenever. A scheduled task sends Claude a one-line message at 4:30 in the morning.</p>
+        <dl class="schedule">
+          <dt>4:30 am</dt><dd>Scheduled message starts window one.</dd>
+          <dt>7:30 am</dt><dd>I get in. Two hours of a full window.</dd>
+          <dt>9:30 am</dt><dd>Resets during standup. Window two starts.</dd>
+          <dt>12 to 1</dt><dd>Lunch. Window two still covers about four hours of real work.</dd>
+          <dt>2:30 pm</dt><dd>Window three, for the rest of the day.</dd>
+        </dl>
+        <p class="muted" style="margin:0">Weekly limits still apply. This spreads your usage across the day. It doesn't add to it.</p>
+      </article>
+
+      <article class="tip">
+        <p class="when">Checked October 2026 · Claude Code</p>
+        <h3>Don't come back from lunch to a giant conversation</h3>
+        <p>Every message you send re-sends the whole conversation. Prompt caching lets Claude skip re-reading the part it just saw, which costs about a tenth as much. But the cache expires when you go idle. Come back from lunch to a 600,000-token conversation and the whole thing has to be cached again. On the API that's billed at 1.25x to 2x normal, so roughly 750,000 to 1.2 million tokens' worth, instead of about 60,000 if the cache were still warm. All that just for saying "okay, where were we?"</p>
+        <p>Before a long break: wrap up, have Claude write a short summary, and start a fresh session when you're back. For my team, I built a small cache warmer and a status bar readout that shows whether your cache is still warm. If you want to build your own, start with Claude Code's <a href="https://code.claude.com/docs/en/plugins/mods/overview">mods</a> and status line.</p>
+        <p class="muted" style="margin:0">A mod runs with your permissions. Only install ones from people you trust.</p>
+      </article>
+
+      <article class="tip">
+        <p class="when">Checked October 2026 · Claude Code</p>
+        <h3>Know your effort level</h3>
+        <p>Effort is how long Claude thinks before it answers. More thinking, better results, slower and more usage. The default has changed before without most people noticing (see the postmortem above). Type <code>/effort</code> in Claude Code to see where you are, and pick on purpose: lower for quick edits, higher for the hard stuff.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="card" aria-labelledby="card-h">
+    <div class="wrap">
+      <span class="part-num" aria-hidden="true">4</span>
+      <p class="kicker">Decision card · fill one out every time</p>
+      <h2 id="card-h">Stop making permanent decisions about tools that aren't permanent</h2>
+      <div class="card decision">
+        <div class="field"><b>What I decided to use</b><span>One sentence. "Switch my coding assistant to X."</span></div>
+        <div class="field"><b>Why</b><span>One line. The real reason, not the marketing one.</span></div>
+        <div class="field"><b>What I'll do if it goes away</b><span>The fallback. A tool, a model, or "go back to how I did it before."</span></div>
+        <div class="field"><b>Which list is it on?</b><span>Watch · Trial · Adopt</span></div>
+        <div class="field" style="border:0;padding:0"><b>Look at this again on</b><span>Three months from today is a good default. Put it on your calendar. The date is the part everyone skips. It's the only part that matters.</span></div>
+      </div>
+      <p style="margin-top:1rem"><a href="keep-up-handout.pdf">Download the printable handout (PDF)</a>: the decision card, the four lists and everything on this page.</p>
+      <p class="muted">Keep four short lists: <b>Ignore</b> (saw it, doesn't touch my work), <b>Watch</b> (might matter later), <b>Trial</b> (one real task, one afternoon), <b>Adopt</b> (using it, has a card with a date). Ten minutes a month to move things around.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>You're allowed to ignore most of this. That isn't you falling behind. That's the routine working.</p>
+    <p style="margin:0">Matt Reed · Momentum Developer Conference 2026. Not affiliated with any company named here.</p>
+  </div>
+</footer>
+</body>
+</html>
