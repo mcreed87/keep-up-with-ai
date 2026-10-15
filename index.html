@@ -132,6 +132,18 @@
   .decision .field:last-child { border: 0; padding: 0; }
   .decision .field b { font-family: var(--serif); font-size: 1.1rem; display: block; }
   .decision .field span { color: var(--muted); font-size: 1rem; }
+  .decision label { display: block; }
+  .decision label b { font-family: var(--serif); font-size: 1.1rem; display: block; }
+  .decision label span { display: block; color: var(--muted); font-size: 1rem; margin-bottom: 0.4rem; }
+  .decision input { width: 100%; font: 1.05rem var(--sans); color: var(--text); background: var(--bg); border: 1px solid var(--edge); border-radius: 10px; padding: 0.65rem 0.75rem; min-height: 2.9rem; }
+  .decision input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+  .decision input[type="date"] { color-scheme: dark; max-width: 16rem; }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+  .card-actions button { font: 700 1.02rem var(--sans); color: var(--bg); background: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0.6rem 1.15rem; min-height: 2.9rem; cursor: pointer; }
+  .card-actions button.ghost { color: var(--accent); background: none; }
+  .card-actions button:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .card-status { color: var(--muted); font-size: 0.98rem; margin: 0.55rem 0 0; min-height: 1.4em; }
+  .private { color: var(--muted); font-size: 0.95rem; margin: 0.7rem 0 0; }
   .lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem; margin: 0.8rem 0 0; }
   .lists div { background: var(--card); border: 1px solid var(--edge); border-radius: 10px; padding: 0.7rem 0.9rem; }
   .lists b { font-family: var(--serif); font-size: 1.12rem; display: block; }
@@ -155,7 +167,8 @@
   @media print {
     body { background: #fff; color: #111; }
     details.sec, .card, details.sub, .callout, nav.toc { background: #fff; border-color: #bbb; }
-    nav.toc, button.toggle-all, .top, summary::after, .num { display: none !important; }
+    nav.toc, button.toggle-all, .top, summary::after, .num, .card-actions, .card-status, .private { display: none !important; }
+    .decision input { background: #fff; color: #111; border-color: #999; }
     a { color: #111; }
   }
 </style>
@@ -166,7 +179,7 @@
     <p class="kicker">Momentum Developer Conference · 2026</p>
     <h1>How to keep up with AI without losing your mind</h1>
     <p class="byline"><strong>Matt Reed</strong> · Everything from the talk, with links.</p>
-    <span class="updated">Updated October 13, 2026</span>
+    <span class="updated">Updated October 14, 2026</span>
     <nav class="toc" aria-label="On this page">
       <div class="row"><p class="kicker">On this page</p><button class="toggle-all" type="button" aria-pressed="false">Expand all</button></div>
       <ol>
@@ -176,8 +189,10 @@
         <li><a href="#notify">Turn on notifications</a></li>
         <li><a href="#weekly">Your weekly hour</a></li>
         <li><a href="#decisions">Decisions with a date</a></li>
+        <li><a href="#words">Words you'll hear</a></li>
         <li><a href="#tips">Tips from my desk</a></li>
-        <li><a href="#handout">The handout (PDF)</a></li>
+        <li><a href="#contact">Questions? Find me on LinkedIn</a></li>
+        <li><a href="#printable">Printable version (PDF)</a></li>
       </ol>
     </nav>
   </div>
@@ -195,6 +210,17 @@
         <li><strong>Try one new thing.</strong><span>Real work. Not a tutorial.</span></li>
         <li><strong>Write one decision, with a date.</strong><span>Revisit it: is the decision still correct? <a href="#decisions">The card is here.</a></span></li>
       </ol>
+      <details class="sub">
+        <summary><span class="when">Then</span>Your first month, week by week</summary>
+        <div class="body">
+          <dl class="schedule" style="margin-bottom:0">
+            <dt>Week 1</dt><dd>Set up your two or three sources. Notifications on for them, off for everything else.</dd>
+            <dt>Week 2</dt><dd>Your first one-hour catch-up. Skim what you saved and ask the three questions.</dd>
+            <dt>Week 3</dt><dd>Your first try-out. One real task, one afternoon, one question written down first.</dd>
+            <dt>Week 4</dt><dd>Your first <a href="#decisions">decision card</a>. Put a date on it about three months out.</dd>
+          </dl>
+        </div>
+      </details>
     </div>
   </details>
 
@@ -210,6 +236,12 @@
       </div>
       <p class="closer">A yes on any one of these means it matters.</p>
       <p class="muted" style="margin:0.6rem 0 0">Three no's means it's entertainment. Read it if you want. Enjoy it. It's not mandatory.</p>
+      <details class="sub">
+        <summary><span class="when">Usually a no</span>What usually doesn't matter</summary>
+        <div class="body">
+          <p style="margin:0">Benchmark arguments. "X is dead" posts. Demos that aren't products yet. Anything with a leaderboard in the headline.</p>
+        </div>
+      </details>
       <a class="top" href="#top">Back to top</a>
     </div>
   </details>
@@ -354,11 +386,42 @@
     <div class="sec-body">
       <p class="lead">Stop making permanent decisions about tools that aren't permanent.</p>
       <p>Every time you adopt something, write down why, write down your fallback, and put a date on it.</p>
-      <div class="card decision">
-        <div class="field"><b>Decision</b><span>One sentence. "Switch my coding assistant to X."</span></div>
-        <div class="field"><b>Why</b><span>One line. The real reason, not the marketing one.</span></div>
-        <div class="field"><b>If it goes away</b><span>The fallback. A tool, a model, or "go back to how I did it before."</span></div>
-        <div class="field"><b>Look again</b><span>Three months out is a good default. Put it on your calendar. The date is the part everyone skips, and it's the only part that matters.</span></div>
+      <form class="card decision" id="decision-card" novalidate>
+        <div class="field"><label for="dc-decision"><b>Decision</b><span>One sentence. "Switch my coding assistant to X."</span></label><input id="dc-decision" name="decision" type="text" autocomplete="off" maxlength="200"></div>
+        <div class="field"><label for="dc-why"><b>Why</b><span>One line. The real reason, not the marketing one.</span></label><input id="dc-why" name="why" type="text" autocomplete="off" maxlength="300"></div>
+        <div class="field"><label for="dc-fallback"><b>If it goes away</b><span>The fallback. A tool, a model, or "go back to how I did it before."</span></label><input id="dc-fallback" name="fallback" type="text" autocomplete="off" maxlength="300"></div>
+        <div class="field"><label for="dc-date"><b>Look again on</b><span>Three months out is a good default. The date is the part everyone skips, and it's the only part that matters.</span></label><input id="dc-date" name="date" type="date"></div>
+        <div class="field">
+          <div class="card-actions">
+            <button type="button" id="dc-cal">Add to calendar</button>
+            <button type="button" class="ghost" id="dc-copy">Copy</button>
+          </div>
+          <p class="card-status" id="dc-status" role="status" aria-live="polite"></p>
+          <p class="private">Nothing you type here leaves your phone. The calendar button saves a reminder file on your device; nothing is sent anywhere.</p>
+        </div>
+      </form>
+      <details class="sub">
+        <summary><span class="when">Before you decide</span>Try before you read</summary>
+        <div class="body">
+          <p style="margin:0">When something new comes out, don't spend two days reading reviews. Spend one afternoon using it on one real task from your backlog. Write down one question first: "What would make this a yes?" Then answer it. Keep it or drop it, and move on.</p>
+        </div>
+      </details>
+      <a class="top" href="#top">Back to top</a>
+    </div>
+  </details>
+
+  <details class="sec" id="words">
+    <summary><p class="kicker">Plain English</p><h2>Words you'll hear</h2></summary>
+    <div class="sec-body">
+      <div class="lists">
+        <div><b>Model</b><span>The AI itself. Claude, GPT, and so on. The brain.</span></div>
+        <div><b>Harness</b><span>The tool you type into that uses the model. Claude Code, Codex, Copilot. The steering wheel.</span></div>
+        <div><b>Cowork</b><span>Same idea as a coding assistant, but for documents, email, spreadsheets, and research.</span></div>
+        <div><b>Release notes</b><span>The vendor's own list of what changed. The most boring and most useful thing you can read.</span></div>
+        <div><b>Deprecation</b><span>A warning that something you use is going away. Usually buried, always important.</span></div>
+        <div><b>Official source</b><span>The company's own account or page. Not a fan account, not a news site, not a repost.</span></div>
+        <div><b>Effort</b><span>How long the model thinks before it answers. More effort, better answers, slower and more usage.</span></div>
+        <div><b>AGI</b><span>An AI with real common sense. You'll see it in every launch; treat it as marketing until proven otherwise.</span></div>
       </div>
       <a class="top" href="#top">Back to top</a>
     </div>
@@ -419,7 +482,8 @@
     </div>
   </details>
 
-  <a class="download" id="handout" href="keep-up-handout.pdf" target="_blank" rel="noopener"><b>Download the handout <span class="nw">(PDF)<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></span></b><br><span class="muted">The game plan, the decision card, and everyone to follow, on paper.</span></a>
+  <a class="download" id="contact" href="https://www.linkedin.com/in/matt-reed-692511107" target="_blank" rel="noopener"><b>Questions after the talk? Find me on <span class="nw">LinkedIn<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></span></b><br><span class="muted">Send me a message. I'm happy to help.</span></a>
+  <a class="download" id="printable" href="keep-up-handout.pdf" target="_blank" rel="noopener"><b>Printable version <span class="nw">(PDF)<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></span></b><br><span class="muted">Prefer paper? The game plan, a decision card, and everyone to follow.</span></a>
 </main>
 
 <footer>
@@ -447,6 +511,8 @@
         if (el && el.tagName === 'DETAILS') el.open = true;
       });
     });
+    // Allow old #handout links to land on the printable version.
+    if (location.hash === '#handout') location.hash = '#printable';
     const btn = document.querySelector('.toggle-all');
     btn.addEventListener('click', function () {
       const expand = btn.getAttribute('aria-pressed') !== 'true';
@@ -454,6 +520,116 @@
       document.querySelectorAll('details.sub').forEach(function (d) { d.open = expand; });
       btn.setAttribute('aria-pressed', String(expand));
       btn.textContent = expand ? 'Collapse all' : 'Expand all';
+    });
+  })();
+</script>
+<script>
+  // Decision card: everything stays in the browser. "Add to calendar" builds an .ics file on the device.
+  (function () {
+    const MONTHS_AHEAD = 3;
+    const $ = function (id) { return document.getElementById(id); };
+    const dateInput = $('dc-date');
+    const status = $('dc-status');
+    const pad = function (n) { return String(n).padStart(2, '0'); };
+
+    const d = new Date();
+    d.setMonth(d.getMonth() + MONTHS_AHEAD);
+    dateInput.value = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+
+    function readCard() {
+      return {
+        decision: $('dc-decision').value.trim(),
+        why: $('dc-why').value.trim(),
+        fallback: $('dc-fallback').value.trim(),
+        date: dateInput.value
+      };
+    }
+    function prettyDate(iso) {
+      const parts = iso.split('-').map(Number);
+      return new Date(parts[0], parts[1] - 1, parts[2]).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    function say(msg) { status.textContent = msg; }
+    function needsDecision(card) {
+      if (card.decision && card.date) return false;
+      say(card.decision ? 'Pick a date to look again.' : 'Write your decision first.');
+      (card.decision ? dateInput : $('dc-decision')).focus();
+      return true;
+    }
+    function asText(card) {
+      return 'DECISION CARD\n' +
+        'Decision: ' + card.decision + '\n' +
+        'Why: ' + (card.why || '-') + '\n' +
+        'If it goes away: ' + (card.fallback || '-') + '\n' +
+        'Look again on: ' + prettyDate(card.date);
+    }
+    function icsEscape(t) { return t.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n'); }
+    function fold(line) {
+      const out = [];
+      while (line.length > 73) { out.push(line.slice(0, 73)); line = ' ' + line.slice(73); }
+      out.push(line);
+      return out.join('\r\n');
+    }
+    function asIcs(card) {
+      const start = card.date.replace(/-/g, '');
+      const p = card.date.split('-').map(Number);
+      const next = new Date(p[0], p[1] - 1, p[2] + 1);
+      const end = next.getFullYear() + pad(next.getMonth() + 1) + pad(next.getDate());
+      const now = new Date();
+      const stamp = now.getUTCFullYear() + pad(now.getUTCMonth() + 1) + pad(now.getUTCDate()) + 'T' + pad(now.getUTCHours()) + pad(now.getUTCMinutes()) + pad(now.getUTCSeconds()) + 'Z';
+      const details = 'Why: ' + (card.why || '-') + '\nIf it goes away: ' + (card.fallback || '-') + '\nIs this decision still correct? Keep it or switch.';
+      return [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//keep-up-with-ai//decision card//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'UID:' + now.getTime() + '-' + Math.random().toString(36).slice(2) + '@keep-up-with-ai',
+        'DTSTAMP:' + stamp,
+        'DTSTART;VALUE=DATE:' + start,
+        'DTEND;VALUE=DATE:' + end,
+        'SUMMARY:' + icsEscape('Look again: ' + card.decision),
+        'DESCRIPTION:' + icsEscape(details),
+        'BEGIN:VALARM', 'ACTION:DISPLAY', 'TRIGGER:PT9H', 'DESCRIPTION:' + icsEscape('Look again: ' + card.decision), 'END:VALARM',
+        'END:VEVENT', 'END:VCALENDAR'
+      ].map(fold).join('\r\n') + '\r\n';
+    }
+
+    $('dc-cal').addEventListener('click', function () {
+      const card = readCard();
+      if (needsDecision(card)) return;
+      try {
+        const blob = new Blob([asIcs(card)], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'look-again.ics';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+        say('Reminder file saved. Open it to add it to your calendar.');
+      } catch (err) {
+        say('Your browser blocked the calendar file. Use Copy and add the date yourself.');
+      }
+    });
+
+    $('dc-copy').addEventListener('click', function () {
+      const card = readCard();
+      if (needsDecision(card)) return;
+      const text = asText(card);
+      function fallback() {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        say(ok ? 'Copied. Paste it into your notes.' : 'Copy was blocked. Select the fields and copy them yourself.');
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it into your notes.'); }, fallback);
+      } else {
+        fallback();
+      }
     });
   })();
 </script>
